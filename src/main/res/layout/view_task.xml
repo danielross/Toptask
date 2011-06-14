@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/mainbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/home_icon"
+            android:padding="10dp"        
+            android:text="@string/app_name" />
+
+
+        <Button
+            android:id="@+id/editbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/edit_icon"
+            android:padding="10dp"        
+            android:text="@string/task_edit" />
+
+        <Button
+            android:id="@+id/deletebutton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/delete_icon"
+            android:padding="10dp"        
+            android:text="@string/task_delete" />
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/taskname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32px"
+            android:textStyle="bold"
+            android:text="Task Name"            
+            />
+
+        <ImageView
+		    android:id="@+id/taskimg"
+    		android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	   	    android:layout_gravity="center_vertical"
+            android:padding="10px"
+	    	/>
+
+    
+        <TextView
+            android:id="@+id/taskpriority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32px"
+            android:textStyle="bold"
+            android:text="PRIO"            
+            />
+    </LinearLayout>
+        
+    <TextView
+        android:id="@+id/taskdescription"
+	    android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textSize="26px"
+        android:text="Some description"
+        
+	    /> 
+</LinearLayout>
