@@ -9,16 +9,16 @@ import android.widget.{Spinner, ArrayAdapter, Button}
 class EditTaskActivity extends Activity 
 {
 
-    lazy val confirmButton = findViewById(R.id.confirm).asInstanceOf[Button]
+   lazy val confirmButton = findViewById(R.id.confirm).asInstanceOf[Button]
+   lazy val category_spinner = findViewById (R.id.category_spinner).asInstanceOf[Spinner]
+   lazy val start_spinner = findViewById (R.id.start_spinner).asInstanceOf[Spinner]
+   lazy val end_spinner = findViewById (R.id.end_spinner).asInstanceOf[Spinner]
 
 
     override def onCreate (savedInstanceState: Bundle) {
         super.onCreate (savedInstanceState)
         setContentView (R.layout.edit_task)
 
-        val category_spinner:Spinner = findViewById (R.id.category_spinner).asInstanceOf[Spinner]
-        val start_spinner:Spinner = findViewById (R.id.start_spinner).asInstanceOf[Spinner]
-        val end_spinner:Spinner = findViewById (R.id.end_spinner).asInstanceOf[Spinner]
         val category_adapter:ArrayAdapter[CharSequence] = ArrayAdapter.createFromResource (this, R.array.categories, android.R.layout.simple_spinner_item)
         val start_adapter:ArrayAdapter[CharSequence] = ArrayAdapter.createFromResource (this, R.array.priorities, android.R.layout.simple_spinner_item)
         val end_adapter:ArrayAdapter[CharSequence] = ArrayAdapter.createFromResource (this, R.array.priorities, android.R.layout.simple_spinner_item)
@@ -38,15 +38,5 @@ class EditTaskActivity extends Activity
             }
         })
         
-        
-
-      }
-    
-
-
-   // ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-    //        this, R.array.planets_array, android.R.layout.simple_spinner_item);
-//    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-  //  spinner.setAdapter(adapter);
-      
+      }      
 }

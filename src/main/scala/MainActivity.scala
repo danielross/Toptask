@@ -5,7 +5,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.content.Intent
 import android.view.View
-import android.widget.{AdapterView, ListView, SimpleAdapter, Button}
+import android.widget.{AdapterView, ListView, SimpleAdapter, Button, Spinner, ArrayAdapter}
 import android.widget.AdapterView.OnItemClickListener
 
 
@@ -18,14 +18,19 @@ import scala.collection.mutable.PriorityQueue
 class MainActivity extends Activity
 {
 
-    lazy val insertButton:Button = findViewById (R.id.insertbutton).asInstanceOf[Button]
+    lazy val insertButton = findViewById (R.id.insertbutton).asInstanceOf[Button]
+    lazy val main_spinner = findViewById (R.id.main_spinner).asInstanceOf[Spinner]
+
     lazy val taskList:ListView = findViewById (R.id.tasklist).asInstanceOf[ListView]
 
     override def onCreate (savedInstanceState: Bundle) {
         super.onCreate (savedInstanceState)
         setContentView (R.layout.main)
-        //val taskList:ListView = findViewById (R.id.tasklist).asInstanceOf[ListView]
-      
+     
+        val main_adapter:ArrayAdapter[CharSequence] = ArrayAdapter.createFromResource (this, R.array.filtercategories, android.R.layout.simple_spinner_item)
+        main_adapter.setDropDownViewResource (android.R.layout.simple_spinner_dropdown_item)
+        main_spinner.setAdapter (main_adapter)        
+
         taskList.setOnItemClickListener (new OnItemClickListener {
             override def onItemClick (parent:AdapterView[_], view: View, position: Int, id: Long) {
                 val viewIntent = new Intent (view.getContext (), classOf[ViewTaskActivity])

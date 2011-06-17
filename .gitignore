@@ -1,0 +1,8 @@
+lib_managed/
+project/
+*.DS_STORE
+*.swp
+*~
+target/
+tests/
+src_managed/
