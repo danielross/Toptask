@@ -49,13 +49,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5px"            
-            android:text="@string/start_priority_prompt"
+            android:text="@string/start"
             />
         <Spinner 
             android:id="@+id/start_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:prompt="@string/start_priority_prompt"
+            android:prompt="@string/start"
             />
 
 
@@ -112,129 +112,97 @@
                     android:layout_height="wrap_content"
                     />
             </LinearLayout>
-
-
-
-
-
-            <!--
-         <DatePicker
-            android:id="@+id/start_dp"
-            android:type:calendarViewShown="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-        <TimePicker
-            android:id="@+id/start_tp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-
--->
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5px"            
-        android:text="@string/end_priority_prompt"
-        />
-    <Spinner 
-        android:id="@+id/end_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:prompt="@string/end_priority_prompt"
-        />
-
-
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5px"            
+            android:text="@string/end"
+            />
+        <Spinner 
+            android:id="@+id/end_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:prompt="@string/end"
+            />
+
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/enddatelabel"            
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5px"            
-                android:text="@string/date"
-                />
-            <EditText android:id="@+id/enddate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"/>
-            <ImageButton 
-                android:id="@+id/enddatebutton"
-                android:src="@drawable/calendar_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/enddatelabel"            
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5px"            
+                    android:text="@string/date"
+                    />
+                <EditText android:id="@+id/enddate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <ImageButton 
+                    android:id="@+id/enddatebutton"
+                    android:src="@drawable/calendar_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/endtimelabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5px"            
+                    android:text="@string/time"
+                    />
+
+                <EditText 
+                    android:id="@+id/endtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    />
+                <ImageButton
+                    android:id="@+id/endtimebutton"
+                    android:src="@drawable/clock_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/endtimelabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5px"            
-                android:text="@string/time"
-                />
-
-            <EditText 
-                android:id="@+id/endtime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                />
-            <ImageButton
-                android:id="@+id/endtimebutton"
-                android:src="@drawable/clock_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-        </LinearLayout>
-        <!--
-        <DatePicker
-            android:id="@+id/end_dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-        <TimePicker
-            android:id="@+id/end_tp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-            -->
     </LinearLayout>
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5px"                    
+        android:text="@string/body"/>
+    <EditText android:id="@+id/body"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:scrollbars="vertical"/>
+
+    <Button android:id="@+id/confirm"
+        android:text="@string/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>
-
-<TextView android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="5px"                    
-    android:text="@string/body"/>
-<EditText android:id="@+id/body"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:layout_weight="1"
-    android:scrollbars="vertical"/>
-
-<Button android:id="@+id/confirm"
-    android:text="@string/confirm"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
-
-</LinearLayout>
-

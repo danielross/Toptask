@@ -9,17 +9,14 @@
     <string name="task_edit">Edit</string>
     <string name="title">Name</string>
     <string name="body">Description</string>
-    <string name="start_prio">Start</string>
-    <string name="end_prio">End</string>
     <string name="confirm">Confirm</string>
-    <string name="edit_task">Edit Task</string>
     <string name="category_prompt">Category</string>    
-    <string name="start_priority_prompt">Start</string>    
-    <string name="end_priority_prompt">End</string>
+    <string name="start">Start</string>    
+    <string name="end">End</string>
     <string name="date">Date</string>
     <string name="time">Time</string>
     <string-array name="priorities">
-        <item>None</item>
+        <item>-</item>
         <item>0</item>
         <item>1</item>
         <item>2</item>
