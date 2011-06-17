@@ -32,11 +32,10 @@ public final class R {
     public static final class id {
         public static final int body=0x7f060010;
         public static final int category_spinner=0x7f060001;
-        public static final int categorylabel=0x7f060013;
         public static final int confirm=0x7f060011;
-        public static final int deletebutton=0x7f06001d;
-        public static final int description=0x7f060017;
-        public static final int editbutton=0x7f06001c;
+        public static final int deletebutton=0x7f06001a;
+        public static final int description=0x7f060014;
+        public static final int editbutton=0x7f060019;
         public static final int end_spinner=0x7f060009;
         public static final int enddate=0x7f06000b;
         public static final int enddatebutton=0x7f06000c;
@@ -44,33 +43,30 @@ public final class R {
         public static final int endtime=0x7f06000e;
         public static final int endtimebutton=0x7f06000f;
         public static final int endtimelabel=0x7f06000d;
-        public static final int img=0x7f060015;
-        public static final int insertbutton=0x7f060018;
-        public static final int main_spinner=0x7f060019;
-        public static final int mainbutton=0x7f06001b;
-        public static final int name=0x7f060016;
+        public static final int img=0x7f060012;
+        public static final int insertbutton=0x7f060015;
+        public static final int main_spinner=0x7f060016;
+        public static final int mainbutton=0x7f060018;
+        public static final int name=0x7f060013;
         public static final int start_spinner=0x7f060002;
         public static final int startdate=0x7f060004;
         public static final int startdatebutton=0x7f060005;
         public static final int startdatelabel=0x7f060003;
-        public static final int startlabel=0x7f060014;
         public static final int starttime=0x7f060007;
         public static final int starttimebutton=0x7f060008;
         public static final int starttimelabel=0x7f060006;
-        public static final int taskdescription=0x7f060021;
-        public static final int taskimg=0x7f06001f;
-        public static final int tasklist=0x7f06001a;
-        public static final int taskname=0x7f06001e;
-        public static final int taskpriority=0x7f060020;
+        public static final int taskdescription=0x7f06001e;
+        public static final int taskimg=0x7f06001c;
+        public static final int tasklist=0x7f060017;
+        public static final int taskname=0x7f06001b;
+        public static final int taskpriority=0x7f06001d;
         public static final int title=0x7f060000;
-        public static final int titlelabel=0x7f060012;
     }
     public static final class layout {
         public static final int edit_task=0x7f030000;
-        public static final int edit_task3=0x7f030001;
-        public static final int listview=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int view_task=0x7f030004;
+        public static final int listview=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int view_task=0x7f030003;
     }
     public static final class string {
         public static final int about=0x7f040001;
