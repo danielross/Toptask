@@ -1,8 +1,10 @@
-lib_managed/
+*lib_managed/
 gae/
 *.DS_STORE
 *.swp
 *~
-target/
-tests/
-src_managed/
+*target/
+*tests/
+*src_managed/
+*boot/
+
