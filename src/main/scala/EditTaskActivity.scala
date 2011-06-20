@@ -215,9 +215,6 @@ class EditTaskActivity extends Activity
             }
         }
 
-    
-
-
     override protected def onCreateDialog (id: Int): Dialog =
         id match {
             case START_DATE_ID =>
