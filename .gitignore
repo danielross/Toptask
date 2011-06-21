@@ -1,5 +1,4 @@
 *lib_managed/
-gae/
 *.DS_STORE
 *.swp
 *~
@@ -7,4 +6,5 @@ gae/
 *tests/
 *src_managed/
 *boot/
-
+*swn
+*swo
