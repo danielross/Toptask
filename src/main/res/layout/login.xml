@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"        
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    >
+
+    <TextView
+        android:id="@+id/emailtext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/email"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailtext"
+        />
+
+    <TextView
+        android:id="@+id/passwordtext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:layout_below="@id/email"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:password="true"
+        android:layout_below="@id/passwordtext"
+        />
+
+    <Button
+        android:id="@+id/loginbutton"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"            
+        android:layout_height="wrap_content"
+        android:text="@string/confirm"
+        android:layout_below="@id/password" 
+        />
+</RelativeLayout> 

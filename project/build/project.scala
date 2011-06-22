@@ -21,7 +21,6 @@ class Parent(info: ProjectInfo) extends ParentProject(info) {
         
         // appengine depends
         val gae = "com.google.appengine" % "appengine-api-1.0-sdk" % "1.3.8"
-
         val liftVersion = "2.3"
         val lift_webkit = "net.liftweb" %% "lift-webkit" % liftVersion % "compile"
         //val lift_mapper = "net.liftweb" %% "lift-mapper" % liftVersion % "compile"
@@ -33,6 +32,7 @@ class Parent(info: ProjectInfo) extends ParentProject(info) {
         val objectify = "com.googlecode.objectify" % "objectify" % "2.2.2"
         val jpa = "javax.persistence" % "persistence-api" % "1.0"
 
+        
         // tmp ?
         val servelet = "javax.servlet" % "servlet-api" % "2.5" % "provided->default"
     }    
