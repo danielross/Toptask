@@ -8,8 +8,8 @@ public class EngineConfiguration
 {
 	private static EngineConfiguration	ourInstance	= new EngineConfiguration();
 
-	//public final static String gae_path	= "http://topnexttask.appspot.com/";
-	public final static String gae_path	= "http://http://localhost:8080/";
+	public final static String gae_path	= "http://topnexttask.appspot.com/";
+	//public final static String gae_path	= "http:://localhost:8080/";
     
 
 	public static EngineConfiguration getInstance()
