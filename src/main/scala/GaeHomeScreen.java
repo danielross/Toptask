@@ -16,7 +16,7 @@ public class GaeHomeScreen extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         Engine.getInstance().getRegisteredConverters().clear();
     	Engine.getInstance().getRegisteredConverters().add(new JacksonConverter());
-        
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
         
