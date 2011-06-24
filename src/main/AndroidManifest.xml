@@ -20,6 +20,7 @@
         <activity android:name=".ViewTaskActivity"></activity>
         <activity android:name=".AddUserActivity" />
 		<activity android:name=".GetAllUserActivity" />
+        <!-- <activity android:name=".GaeHomeScreen" />-->
 
     </application>
 

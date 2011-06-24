@@ -9,6 +9,7 @@ import android.widget.{Button}
 class LoginActivity extends Activity
 {
     lazy val loginButton = findViewById (R.id.loginbutton).asInstanceOf[Button]
+    lazy val addButton = findViewById (R.id.insertuserbutton).asInstanceOf[Button]
 
     override def onCreate (savedInstanceState: Bundle) {
         super.onCreate (savedInstanceState)
@@ -18,9 +19,15 @@ class LoginActivity extends Activity
                 // TODO properly one day...
                 override def onClick (view: View) {
                     val mainIntent = new Intent (view.getContext (), classOf[MainActivity])
-                    startActivityForResult (mainIntent, 0)
+                        startActivityForResult (mainIntent, 0)
                 }
             })
 
+        addButton.setOnClickListener (new View.OnClickListener {
+                override def onClick (view: View) {
+                    val addUserIntent = new Intent (view.getContext (), classOf[AddUserActivity])
+                        startActivityForResult (addUserIntent, 0)
+                }
+            })
     }
 }
