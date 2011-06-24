@@ -15,6 +15,7 @@ class Parent(info: ProjectInfo) extends ParentProject(info) {
         val keyalias  = "change-me"
         val scalatest = "org.scalatest" % "scalatest" % "1.3" % "test"
         val lift_json = "net.liftweb" %% "lift-json" % "2.3"
+        override def proguardOption = "-keep class org.restlet.** -keep class org.codehaus.jackson.**"
     }
 
     class EngineProject(info: ProjectInfo) extends AppengineProject(info) with Defaults {
