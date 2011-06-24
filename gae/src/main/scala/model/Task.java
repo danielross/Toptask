@@ -1,14 +1,19 @@
 package model;
 
 import java.io.Serializable;
+import com.googlecode.objectify.Key;
+import com.googlecode.objectify.annotation.Parent;
 
 import javax.persistence.Id;
+import model.User;
 
 public class Task implements Serializable {
 
 	private static final long serialVersionUID = 7390103290165670099L;
 	@Id
 	private Long id;
+    @Parent
+    private Key<User> owner;
 	private String name;
 	private String category;
 	private Long pStart;
@@ -25,6 +30,14 @@ public class Task implements Serializable {
 	public void setId (Long id) {
 		this.id = id;
 	}
+
+    public Key<User> getOwner () {
+        return owner;
+    }
+
+    public void setOwner (Key<User> owner) {
+        this.owner = new Key<User>(User.class, owner.getId());
+    }
 
 	public void setName (String name) {
 		this.name = name;

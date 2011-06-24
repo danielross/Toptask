@@ -10,7 +10,7 @@ public class RestletDispatch extends Application
 	public synchronized Restlet createInboundRoot()
 	{
 
-		final Router router = new Router(getContext());
+		final Router router = new Router (getContext ());
 
 		router.attach("/user", UserController.class);
 		

@@ -7,6 +7,7 @@ public class Task implements Serializable {
 	private static final long serialVersionUID = 7390103290165670099L;
 	
     private Long id;
+    private Long owner;
 	private String name;
 	private String category;
 	private Long pStart;
@@ -23,6 +24,15 @@ public class Task implements Serializable {
 	public void setId (Long id) {
 		this.id = id;
 	}
+
+     public Long getOwner () {
+        return owner;
+    }
+
+    public void setOwner (Long owner) {
+        this.owner = owner;
+    }
+
 
 	public void setName (String name) {
 		this.name = name;
