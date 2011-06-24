@@ -9,7 +9,7 @@ class Parent(info: ProjectInfo) extends ParentProject(info) {
 
     lazy val main  = project(".", "Toptask", new MainProject(_))
     lazy val engine = project("gae", "gae", new EngineProject(_))
-    lazy val tests = project("tests",  "tests", new TestProject(_), main)
+    //lazy val tests = project("tests",  "tests", new TestProject(_), main)
 
     class MainProject(info: ProjectInfo) extends AndroidProject(info) with Defaults with MarketPublish with TypedResources {
         val keyalias  = "change-me"
