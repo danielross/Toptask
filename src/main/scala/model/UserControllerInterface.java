@@ -4,9 +4,9 @@ import org.restlet.resource.Get;
 import org.restlet.resource.Put;
 
 public interface UserControllerInterface {
-    @Put
+    @Put("json")
     void create(User user);
     
-    @Get
+    @Get("json")
     Container getAllUsers();
 }

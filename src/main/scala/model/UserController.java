@@ -22,7 +22,7 @@ public class UserController {
 	    uci.create(user);
 	    Log.i("UserController", "Creation success !");
 	} catch (Exception e) {
-	    Log.i("UserController", "Creation failed !");
+	    Log.i("UserController", "Creation failed !" + e);
 	    throw e;
 	}
     }

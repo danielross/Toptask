@@ -6,11 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import org.restlet.ext.jackson.JacksonConverter;
+import org.restlet.engine.Engine;
+
 
 public class GaeHomeScreen extends Activity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Engine.getInstance().getRegisteredConverters().clear();
+    	Engine.getInstance().getRegisteredConverters().add(new JacksonConverter());
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main2);
         
