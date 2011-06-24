@@ -2,13 +2,11 @@ package model;
 
 import java.io.Serializable;
 
-import javax.persistence.Id;
-
 public class Task implements Serializable {
 
 	private static final long serialVersionUID = 7390103290165670099L;
-	@Id
-	private Long id;
+	
+    private Long id;
 	private String name;
 	private String category;
 	private Long pStart;
