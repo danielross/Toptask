@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<web-app 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
-    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-    version="2.5">
-    <display-name>Toptask Engine</display-name>
-    <!--
-    <filter>
-        <filter-name>LiftFilter</filter-name>
-        <display-name>Lift Filter</display-name>
-        <description>The Filter that intercepts lift calls</description>
-        <filter-class>net.liftweb.http.LiftFilter</filter-class>
-    </filter>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+	<context-param>
+		<param-name>org.restlet.application</param-name>
+		<param-value>server.RestletDispatch</param-value>
+	</context-param>
 
 
-    <filter-mapping>
-        <filter-name>LiftFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
--->
-
-    <servlet>
-        <servlet-name>HelloWorld</servlet-name>
-        <servlet-class>HelloWorld</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HelloWorld</servlet-name>
-        <url-pattern>/hello</url-pattern>
-    </servlet-mapping>
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-    </welcome-file-list>
+	<servlet>
+		<servlet-name>HelloWorld</servlet-name>
+		<servlet-class>HelloWorld</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloWorld</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+      <servlet-name>RestletServlet</servlet-name>
+      <servlet-class>
+         org.restlet.ext.servlet.ServerServlet
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>RestletServlet</servlet-name>
+      <url-pattern>/rest/*</url-pattern>
+   </servlet-mapping>	
+  
+  
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
 </web-app>
