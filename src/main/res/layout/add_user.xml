@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<EditText android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:hint="Nom" android:id="@+id/userName" />
+
+	<EditText android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:hint="Prenom" android:id="@+id/userFirstName" />
+
+	<EditText android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:hint="Email" android:id="@+id/userMail" />
+
+	<EditText android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:hint="Telephone"
+		android:id="@+id/userPhone" />
+
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="Ajouter cet utilisateur"
+		android:id="@+id/addUserNow" />
+
+</LinearLayout>
