@@ -4,7 +4,7 @@
     <string name="about">Toptask is a prioritized todo list</string>
     <string name="author">Daniel Ross</string>
     <string name="hello">Hello</string>
-    <string name="add_user">Add User</string>
+    <string name="add_user">New User</string>
     <string name="get_users">View All Users</string>
     <string name="email">Login (email)</string>
     <string name="password">Password</string>    

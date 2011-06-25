@@ -11,32 +11,32 @@ import org.restlet.engine.Engine
 
 
 class GaeHomeScreen extends Activity {
-  
+
     lazy val addUser = findViewById (R.id.addUser).asInstanceOf[Button]
     lazy val getUsers = findViewById (R.id.getUsers).asInstanceOf[Button]    
-    
+
     override def onCreate (savedInstanceState: Bundle) {
         Engine.getInstance().getRegisteredConverters().clear()
-    	Engine.getInstance().getRegisteredConverters().add(new JacksonConverter())
+        Engine.getInstance().getRegisteredConverters().add(new JacksonConverter())
 
         super.onCreate (savedInstanceState)
         setContentView (R.layout.main2)
-        
+
         addUser.setOnClickListener (new OnClickListener() {
-            override def onClick (v: View) {
-        		val addIntent = new Intent(v.getContext, classOf[AddUserActivity])
-        		startActivity (addIntent)
-	        }
-	    })
-        
+                override def onClick (v: View) {
+                    val addIntent = new Intent(v.getContext, classOf[AddUserActivity])
+                        startActivity (addIntent)
+                }
+            })
+
         getUsers.setOnClickListener(new OnClickListener() {
-            override def onClick (v: View) {
-                val getUsersIntent = new Intent (v.getContext, classOf[GetAllUserActivity])
-        		startActivity (getUsersIntent)
-	        }
-	    })
-        
+                override def onClick (v: View) {
+                    val getUsersIntent = new Intent (v.getContext, classOf[GetAllUserActivity])
+                        startActivity (getUsersIntent)
+                }
+            })
+
     }
-    
+
 }
 
