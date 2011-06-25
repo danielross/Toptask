@@ -58,7 +58,7 @@ class AddUserActivity extends Activity {
                         override def run() {
                             // Display warning
                             val ctx = getApplicationContext
-                            val txt = "Sorry, task was not saved!"
+                            val txt = "Sorry, user was not saved!"
                             val duration = Toast.LENGTH_LONG
                             val toast = Toast.makeText(ctx, txt, duration)
                             toast.show()
