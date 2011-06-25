@@ -28,7 +28,7 @@ public class TaskController {
     }
 
 
-    public List<Task> getAllTasks() {
+    public List<TaskModel> getAllTasks() {
         final TaskControllerInterface tci = cr.wrap(TaskControllerInterface.class);
         TaskContainer content = tci.getAllTasks();
         return content.getTask_list();

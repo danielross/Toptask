@@ -17,7 +17,7 @@ public class TaskController extends ServerResource implements
     public TaskController() {}
 
     @Override
-    public void create (Task task) {
+    public void create (TaskModel task) {
     	ObjectifyService.register(TaskModel.class);
 	    Objectify ofy = ObjectifyService.begin();
 
@@ -39,7 +39,7 @@ public class TaskController extends ServerResource implements
 	    ObjectifyService.register(TaskModel.class);
     	Objectify ofy = ObjectifyService.begin();
 
-	    Query<Task> q = ofy.query(TaskModel.class);
+	    Query<TaskModel> q = ofy.query(TaskModel.class);
 
     	for (TaskModel u : q)
 	        tasks.add(u);
