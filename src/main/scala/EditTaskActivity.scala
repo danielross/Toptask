@@ -3,11 +3,13 @@ package net.danross.toptask
 import android.app.{Activity, AlertDialog, DatePickerDialog, TimePickerDialog, Dialog}
 import android.os.Bundle
 import android.view.View
-import android.widget.{Spinner, ArrayAdapter, Button, ImageButton, DatePicker, TimePicker, EditText}
+import android.content.Intent
+import android.widget.{Spinner, ArrayAdapter, Button, ImageButton, DatePicker, TimePicker, EditText, Toast}
 
 import java.util.Calendar
 import org.restlet.ext.jackson.JacksonConverter
 import org.restlet.engine.Engine
+import net.danross.toptask.model.{TaskModel, TaskController}
 
 object EditTaskActivity
 {
@@ -141,11 +143,58 @@ class EditTaskActivity extends Activity
 
         confirmButton.setOnClickListener (new View.OnClickListener {
                 override def onClick (view: View) {
+                    addTask ()
                     setResult (Activity.RESULT_OK)
-                    finish ()
+                    //finish ()
                 }
             })
     }
+
+    final def addTask() {
+
+        val checkUpdate = new Thread() {
+            override def run() {
+                val name = findViewById (R.id.title).asInstanceOf[EditText]
+                val category = findViewById(R.id.category_spinner).asInstanceOf[Spinner]
+                val pStart = findViewById(R.id.start_spinner).asInstanceOf[Spinner]
+                val pEnd = findViewById(R.id.end_spinner).asInstanceOf[Spinner]
+                val due = findViewById(R.id.enddate).asInstanceOf[EditText]
+                val description = findViewById(R.id.body).asInstanceOf[EditText]              
+                val task = new TaskModel
+                task.setName(name.getText().toString())
+                task.setDueDate(due.getText().toString())
+                task.setDescription(description.getText().toString())
+                //task.setPriorityStart(pStart.getSelectedItem().toString())
+                //task.setPriorityEnd(pEnd.getSelectedItem().toString())
+                task.setCategory(category.getSelectedItem().toString())
+                
+                val tc = new TaskController
+                try {
+                    tc.create (task)
+                    //Toast.makeText(EditTaskActivity.this, "Task saved!", Toast.LENGTH_SHORT).show()
+
+                } catch {
+                    case e: Exception => 
+                    runOnUiThread (new Runnable() {
+                        override def run() {
+                            // Display warning
+                            val ctx = getApplicationContext
+                            val txt = "Sorry, task was not saved!"
+                            val duration = Toast.LENGTH_LONG
+                            val toast = Toast.makeText(ctx, txt, duration)
+                            toast.show()
+                        }
+                    })  
+                }
+
+                val createTaskIntent = new Intent(EditTaskActivity.this, classOf[MainActivity])
+                startActivity (createTaskIntent)
+            }
+        }
+
+        checkUpdate.start
+    }
+
 
     // updates the start date in the EditView
     private def updateDateDisplay (id: Int) {

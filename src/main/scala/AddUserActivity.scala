@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
-import android.widget.{Button, EditText}
+import android.widget.{Button, EditText, Toast}
 
 import net.danross.toptask.model.User
 import net.danross.toptask.model.UserController
@@ -50,12 +50,24 @@ class AddUserActivity extends Activity {
                 val uc = new UserController
                 try {
                     uc.create (user)
+                    //Toast.makeText(AddUserActivity.this, "User saved!", Toast.LENGTH_SHORT).show()
+
                 } catch {
-                    case e: Exception => return
+                    case e: Exception => 
+                    runOnUiThread (new Runnable() {
+                        override def run() {
+                            // Display warning
+                            val ctx = getApplicationContext
+                            val txt = "Sorry, task was not saved!"
+                            val duration = Toast.LENGTH_LONG
+                            val toast = Toast.makeText(ctx, txt, duration)
+                            toast.show()
+                        }
+                    })                         
                 }
 
-                val intent = new Intent(AddUserActivity.this, classOf[GaeHomeScreen])
-                    startActivity (intent)
+                  val intent = new Intent(AddUserActivity.this, classOf[GaeHomeScreen])
+                  startActivity (intent)
             }
         }
 

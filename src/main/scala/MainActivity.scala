@@ -53,20 +53,20 @@ class MainActivity extends Activity
 
         val task1 = new Task ("Find a job", 4, 5, None, "I need to find a job because I have almost finished my studies!")
 
-            val task2 = new Task ("Implement Toptask", 1, 4, Some (new GregorianCalendar (2011, Calendar.JUNE, 30).getTime), "Toptask is a prioritized todo list application")
+        val task2 = new Task ("Implement Toptask", 1, 4, Some (new GregorianCalendar (2011, Calendar.JUNE, 30).getTime), "Toptask is a prioritized todo list application")
 
-            val cal3 = new GregorianCalendar (2011, Calendar.MAY, 24, 20, 0).getTime
+        val cal3 = new GregorianCalendar (2011, Calendar.MAY, 24, 20, 0).getTime
         val task3 = new Task ("Cook supper", 0, 4, Some (cal3))
 
-            val pq = new PriorityQueue[Task]
+        val pq = new PriorityQueue[Task]
         pq += task1
         pq += task2
         pq += task3
 
         var list1 = new ToptaskList ("Family", new PriorityQueue[Task])
-            var list2 = new ToptaskList ("Work", pq)
+        var list2 = new ToptaskList ("Work", pq)
 
-            var listItem = new java.util.ArrayList[java.util.HashMap[String,String]]
+        var listItem = new java.util.ArrayList[java.util.HashMap[String,String]]
 
         val taskA = pq.dequeue
         val taskB = pq.dequeue
@@ -92,7 +92,7 @@ class MainActivity extends Activity
 
         val mSchedule = new SimpleAdapter (this.getBaseContext(), listItem, R.layout.listview, Array ("img", "name", "description"), Array (R.id.img, R.id.name, R.id.description))
 
-            taskList.setAdapter (mSchedule)
+        taskList.setAdapter (mSchedule)
 
     }
 }
