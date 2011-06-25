@@ -15,7 +15,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/home_icon"
-            android:padding="10dp"        
             android:text="@string/app_name" />
 
 
@@ -24,7 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/edit_icon"
-            android:padding="10dp"        
             android:text="@string/task_edit" />
 
         <Button
@@ -32,7 +30,6 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/delete_icon"
-            android:padding="10dp"        
             android:text="@string/task_delete" />
     </LinearLayout>
 

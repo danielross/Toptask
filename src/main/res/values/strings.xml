@@ -9,7 +9,8 @@
     <string name="email">Login (email)</string>
     <string name="password">Password</string>    
     <string name="no_tasks">No tasks scheduled :(</string>
-    <string name="task_insert">Add Task</string>
+    <string name="task_insert">Add</string>
+    <string name="task_refresh">Refresh</string>
     <string name="task_delete">Delete</string>
     <string name="task_edit">Edit</string>
     <string name="title">Name</string>

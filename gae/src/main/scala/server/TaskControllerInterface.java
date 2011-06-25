@@ -12,4 +12,3 @@ public interface TaskControllerInterface {
     @Get
     TaskContainer getAllTasks();
 }
-

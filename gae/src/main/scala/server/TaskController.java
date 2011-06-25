@@ -50,4 +50,3 @@ public class TaskController extends ServerResource implements
 	    return content;
     }
 }
-

@@ -18,4 +18,3 @@ public class RestletDispatchTask extends Application
 	}
 
 }
-

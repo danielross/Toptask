@@ -4,7 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.content.Intent
 import android.view.View
-import android.widget.{Button}
+import android.widget.{Button, EditText, Toast}
 import org.restlet.ext.jackson.JacksonConverter
 import org.restlet.engine.Engine
 
@@ -25,7 +25,10 @@ class LoginActivity extends Activity
                 // TODO properly one day...
                 override def onClick (view: View) {
                     val mainIntent = new Intent (view.getContext (), classOf[MainActivity])
-                        startActivityForResult (mainIntent, 0)
+                      if (checkLogin)
+                          startActivityForResult (mainIntent, 0)
+                      else
+                          Toast.makeText(LoginActivity.this, "Wrong login or password", Toast.LENGTH_LONG).show()         
                 }
             })
 
@@ -35,5 +38,17 @@ class LoginActivity extends Activity
                         startActivityForResult (addUserIntent, 0)
                 }
             })
+    }
+
+    def checkLogin = {
+        //TODO properly with thread to lookup datastore
+        val name = findViewById (R.id.email).asInstanceOf[EditText]
+        val password = findViewById(R.id.password).asInstanceOf[EditText]
+
+        if (name.getText.toString == "daniel@ross.com" && 
+                password.getText.toString == "danielross")
+              true
+              else
+                false
     }
 }

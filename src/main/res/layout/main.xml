@@ -16,9 +16,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/add_icon"
-            android:padding="10dp"        
             android:text="@string/task_insert" 
             />
+         <Button
+            android:id="@+id/refreshbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/refresh_icon"
+            android:text="@string/task_refresh" 
+            />
+
         <Spinner 
             android:id="@+id/main_spinner"
             android:layout_width="wrap_content"
