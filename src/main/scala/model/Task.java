@@ -1,4 +1,4 @@
-package model;
+package net.danross.toptask.model;
 
 import java.io.Serializable;
 
