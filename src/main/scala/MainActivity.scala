@@ -11,6 +11,7 @@ import android.widget.AdapterView.OnItemClickListener
 import org.restlet.ext.jackson.JacksonConverter
 import org.restlet.engine.Engine
 
+import net.danross.toptask.model.{TaskModel, TaskController}
 import java.util.Date
 import java.util.Calendar
 import java.util.GregorianCalendar
@@ -23,7 +24,7 @@ class MainActivity extends Activity
     lazy val insertButton = findViewById (R.id.insertbutton).asInstanceOf[Button]
     lazy val main_spinner = findViewById (R.id.main_spinner).asInstanceOf[Spinner]
 
-    lazy val taskList:ListView = findViewById (R.id.tasklist).asInstanceOf[ListView]
+    lazy val taskList = findViewById (R.id.tasklist).asInstanceOf[ListView]
 
     override def onCreate (savedInstanceState: Bundle) {
         Engine.getInstance().getRegisteredConverters().clear()
@@ -89,12 +90,33 @@ class MainActivity extends Activity
         map.put ("description", taskC.getDescription)
         map.put ("img", Category.get("family"))
         listItem.add (map)
+    
+     
+        val list = new TaskController
+        var lists:java.util.List[TaskModel] = null
+        
+        try {
+            lists = list.getAllTasks()
+        } catch  {
+            case e:Exception => e.printStackTrace()
+        }
+        if (lists != null) {
+            for (i<- 0 to lists.size) {
+                    if (lists.get(i) != null) {
+                        map = new java.util.HashMap[String,String]
+                        map.put ("name", lists.get(i).getName)
+                        map.put ("description", lists.get(i).getDescription)
+                        map.put ("img", Category.get(lists.get(i).getCategory))
+                        listItem.add (map)
+                }
+            }
+        }
 
         val mSchedule = new SimpleAdapter (this.getBaseContext(), listItem, R.layout.listview, Array ("img", "name", "description"), Array (R.id.img, R.id.name, R.id.description))
 
         taskList.setAdapter (mSchedule)
-
     }
+    
 }
 
 object Category

@@ -55,4 +55,3 @@ public class GetAllTaskActivity extends Activity {
         }
     }
 }
-
