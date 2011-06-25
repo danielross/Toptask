@@ -16,7 +16,7 @@ public class TaskController {
         EngineConfiguration.getInstance();        
     }
 
-    public void create (Task task) throws Exception {
+    public void create (TaskModel task) throws Exception {
         final TaskControllerInterface tci = cr.wrap(TaskControllerInterface.class);
         try {
             tci.create(task);

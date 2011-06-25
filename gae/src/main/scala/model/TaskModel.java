@@ -1,13 +1,19 @@
-package net.danross.toptask.model;
+package model;
 
 import java.io.Serializable;
+import com.googlecode.objectify.Key;
+import com.googlecode.objectify.annotation.Parent;
 
-public class Task implements Serializable {
+import javax.persistence.Id;
+import model.User;
+
+public class TaskModel implements Serializable {
 
 	private static final long serialVersionUID = 7390103290165670099L;
-	
-    private Long id;
-    private Long owner;
+	@Id
+	private Long id;
+    @Parent
+    private Key<User> owner;
 	private String name;
 	private String category;
 	private Long pStart;
@@ -15,7 +21,7 @@ public class Task implements Serializable {
     private String due;
     private String description;
 
-	public Task() {}
+	public TaskModel() {}
 
 	public Long getId() {
 		return id;
@@ -25,14 +31,13 @@ public class Task implements Serializable {
 		this.id = id;
 	}
 
-     public Long getOwner () {
+    public Key<User> getOwner () {
         return owner;
     }
 
-    public void setOwner (Long owner) {
-        this.owner = owner;
+    public void setOwner (Key<User> owner) {
+        this.owner = new Key<User>(User.class, owner.getId());
     }
-
 
 	public void setName (String name) {
 		this.name = name;

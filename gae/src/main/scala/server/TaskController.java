@@ -8,7 +8,7 @@ import org.restlet.resource.ServerResource;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyService;
 import com.googlecode.objectify.Query;
-import model.Task;
+import model.TaskModel;
 import model.User;
 
 public class TaskController extends ServerResource implements
@@ -18,10 +18,10 @@ public class TaskController extends ServerResource implements
 
     @Override
     public void create (Task task) {
-    	ObjectifyService.register(Task.class);
+    	ObjectifyService.register(TaskModel.class);
 	    Objectify ofy = ObjectifyService.begin();
 
-    	Task tp = new Task();
+    	TaskModel tp = new TaskModel();
 	    tp.setName(task.getName());
     	tp.setCategory(task.getCategory());
 	    tp.setDescription(task.getDescription());
@@ -35,13 +35,13 @@ public class TaskController extends ServerResource implements
     @Override
     public TaskContainer getAllTasks() {
         TaskContainer content = null;
-    	List<Task> tasks = new ArrayList<Task>();
-	    ObjectifyService.register(Task.class);
+    	List<TaskModel> tasks = new ArrayList<TaskModel>();
+	    ObjectifyService.register(TaskModel.class);
     	Objectify ofy = ObjectifyService.begin();
 
-	    Query<Task> q = ofy.query(Task.class);
+	    Query<Task> q = ofy.query(TaskModel.class);
 
-    	for (Task u : q)
+    	for (TaskModel u : q)
 	        tasks.add(u);
 
     	content = new TaskContainer();
