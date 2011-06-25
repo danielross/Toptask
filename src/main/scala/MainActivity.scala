@@ -75,19 +75,19 @@ class MainActivity extends Activity
         var map = new java.util.HashMap[String,String]
         map.put ("name", taskA.getName)
         map.put ("description", taskA.getDescription)
-        map.put ("img", String.valueOf (R.drawable.blue_icon))
+        map.put ("img", Category.get("home"))
         listItem.add (map)
 
         map = new java.util.HashMap[String,String]
         map.put ("name", taskB.getName)
         map.put ("description", taskB.getDescription)
-        map.put ("img", String.valueOf (R.drawable.gray_icon))
+        map.put ("img", Category.get("work"))
         listItem.add (map)
 
         map = new java.util.HashMap[String,String]
         map.put ("name", taskC.getName)
         map.put ("description", taskC.getDescription)
-        map.put ("img", String.valueOf (R.drawable.pink_icon))
+        map.put ("img", Category.get("family"))
         listItem.add (map)
 
         val mSchedule = new SimpleAdapter (this.getBaseContext(), listItem, R.layout.listview, Array ("img", "name", "description"), Array (R.id.img, R.id.name, R.id.description))
@@ -95,4 +95,16 @@ class MainActivity extends Activity
         taskList.setAdapter (mSchedule)
 
     }
+}
+
+object Category
+{
+    val map = new java.util.HashMap[String,String]
+    map.put ("home" , String.valueOf (R.drawable.blue_icon))
+    map.put ("family" , String.valueOf (R.drawable.pink_icon))
+    map.put ("work" , String.valueOf (R.drawable.gray_icon))
+    map.put ("leisure" , String.valueOf (R.drawable.green_icon))
+    map.put ("other" , String.valueOf (R.drawable.orange_icon))
+
+    def get (cat: String) = map.get(cat)
 }
